@@ -27,17 +27,24 @@ main files are:
 ## Design data model and key data structures
 Three tables are stored in Cassandra. I choose NoSQL database because mood_fact table can potentially be very large. Cassandra can sort the records by time stamp, which is a advantage for proximity API.
 1. mood_fact
+
     user_id(PK)
-    date
-    time
-    mood_key(FK)
+
+date
+
+time
+
+mood_key(FK)
 
 2. mood_dim
-    mood_key(PK)
-    mood
+
+mood_key(PK)
+
+mood
 
 3. authentication_token
-    token
+
+token
 
 ## Unit tests
 1. test the correctness
