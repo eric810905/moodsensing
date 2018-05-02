@@ -30,21 +30,21 @@ Three tables are stored in Cassandra. I choose NoSQL database because mood_fact 
 
     user_id(PK)
 
-date
+    date
 
-time
+    time
 
-mood_key(FK)
+    mood_key(FK)
 
 2. mood_dim
 
-mood_key(PK)
+    mood_key(PK)
 
-mood
+    mood
 
 3. authentication_token
 
-token
+    token
 
 ## Unit tests
 1. test the correctness
