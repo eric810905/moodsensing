@@ -1,9 +1,9 @@
 # Introduction
-This is the code skeleton for the backend API for mood sensing application. The backend service is implemented by Flask. Cassandra is the choice for database. Use google places API to find the nearest location given user's location (https://developers.google.com/places/web-service/)
+This is the skeleton code of the backend API for mood sensing application. The backend service is implemented by Flask. Cassandra is the choice for database. I use google places API to find the nearest location given user's location. (https://developers.google.com/places/web-service/)
 
 ## Assumptions
 1. The mood data is very large and cannot be fit into a machine.
-2. The third API will return a nearest location (home, office, shopping center) if the given user is happy now. I assume the users are happy if the latest mood record in the database is happy and the timestamp is within one hour.
+2. The third call API will return a nearest location (home, office, shopping center) if the given user is happy now. I assume the users are happy if the latest mood record in the database is happy and the timestamp is within one hour.
 
 ## Define API
 upload a mood:
@@ -25,7 +25,7 @@ main files are:
 3. cassandraTable.cql: create tables in cassandra cluster. Define the partition key.
 
 ## Design data model and key data structures
-two tables are stored in Cassandra. Choose NoSQL database because mood_fact table can potentially be very large. Cassandra can sort the records by time stamp, which is a advantage for proximity API.
+Three tables are stored in Cassandra. I choose NoSQL database because mood_fact table can potentially be very large. Cassandra can sort the records by time stamp, which is a advantage for proximity API.
 1. mood_fact
     user_id(PK)
     date
